@@ -1,0 +1,17 @@
+{
+  "name": "squeezer-token-smartcontract",
+  "version": "1.0.0",
+  "description": "SQZ token smart contract repository",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Chisiu <nick@squeezer.io> (http://squeezer.io)",
+  "license": "MIT",
+  "dependencies": {
+    "truffle-hdwallet-provider": "0.0.3"
+  }
+}
