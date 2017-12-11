@@ -1,7 +1,9 @@
 'use strict';
 
 const HDWalletProvider = require('truffle-hdwallet-provider');
+const Web3 = require("web3");
 const wallet = require('./wallet');
+const web3 = new Web3();
 
 module.exports = {
   networks: {
@@ -12,7 +14,9 @@ module.exports = {
     },
     live: {
       provider: new HDWalletProvider(wallet.live.mnemonic, 'https://mainnet.infura.io/' , wallet.live.address),      
-      network_id: "*" // Match any network id
+      network_id: "*",
+      gas: 5000000,
+      gasPrice: web3.toWei("60", "gwei")  
     },
   }
 };

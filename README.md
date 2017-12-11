@@ -11,11 +11,11 @@ https://iancoleman.io/bip39/#english
 
 module.exports = {
   development : {
-    mnemonic : 'notice thunder bla bla bla ...',
+    mnemonic : 'notice thunder ...',
     address : '0x5d556EF9xxxxxxxxxxxxxxxx'
   },
   live : {
-    mnemonic : 'notice cloud bla bla bla ...',
+    mnemonic : 'notice cloud ...',
     address : '0x7d556EF9xxxxxxxxxxxxxxxx'
   }
 }
@@ -27,8 +27,13 @@ module.exports = {
 Tools Used:
 
 https://github.com/OpenZeppelin/zeppelin-solidity
+
 https://github.com/oraclesorg/oracles-combine-solidity/
+
 https://kovan.etherscan.io/
+
 https://metamask.io/
+
 https://gitter.im/kovan-testnet/faucet - ask for free Kether to deploy to Kovan network
+
 https://parity.io/
