@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.23;
 
 import './StandardToken.sol';
 import './Ownable.sol';
@@ -17,8 +17,8 @@ contract BurnableToken is Ownable, StandardToken {
   function burnRemainingTokens() onlyOwner public {
     address burner = msg.sender;
 
-    Burn(burner, balances[burner]);
+    emit Burn(burner, balances[burner]);
     balances[burner] = 0;
-    totalSupply = 0;
+    totalSupply_ = 0;
   }
 }

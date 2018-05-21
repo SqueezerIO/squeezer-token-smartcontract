@@ -1,21 +1,22 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.23;
 
 import "./token/StandardToken.sol";
 import "./token/BurnableToken.sol";
 
-contract SqueezerToken is StandardToken, BurnableToken {
+contract SqueezerToken is StandardToken,BurnableToken {
 
-  string public constant name = "Squeezer Token";
-  string public constant symbol = "SQZR";
-  uint8 public constant decimals = 18;
+  string public constant name = "Squeezer"; // solium-disable-line uppercase
+  string public constant symbol = "SQR"; // solium-disable-line uppercase
+  uint8 public constant decimals = 18; // solium-disable-line uppercase
 
-  uint256 public constant TOKEN_SALE_SUPPLY = 308000000 * (10 ** uint256(decimals));
-  uint256 public constant TOKEN_CREATORS_SUPPLY = 77000000 * (10 ** uint256(decimals));
-  address constant public CREATORS_WALLET_ADDRESS = 0x2FCA908cc4Ab3bD8684A1c55d24D6EFA3A02d8c1;
+  uint256 public constant INITIAL_SUPPLY = 187500000 * (10 ** uint256(decimals));
 
-  function SqueezerToken() public {
-    totalSupply = TOKEN_SALE_SUPPLY;
-    balances[msg.sender] = TOKEN_SALE_SUPPLY;
-    balances[CREATORS_WALLET_ADDRESS] = TOKEN_CREATORS_SUPPLY;
+  /**
+   * @dev Constructor that gives msg.sender all of existing tokens.
+   */
+  constructor() public {
+    totalSupply_ = INITIAL_SUPPLY;
+    balances[msg.sender] = INITIAL_SUPPLY;
+    emit Transfer(0x0, msg.sender, INITIAL_SUPPLY);
   }
 }
